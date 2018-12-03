@@ -19,7 +19,7 @@ Kolaborasyon
 * Aprè PRs yo merged nan master an. Branch lan sipoze delete
 
 
-Core Kontribatè
+Core Kontribitè
 ------------------------------------------
 
 * Esterling Accime
