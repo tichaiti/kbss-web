@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
 import { Button } from '@/components/atoms';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const name = 'new message';
+describe('Button.vue', () => {
+  it('renders props.name when passed', () => {
+    const name = 'Button';
     const wrapper = shallowMount(Button, {
       propsData: { name },
     });
