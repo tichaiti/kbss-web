@@ -11,7 +11,9 @@
 
 
 <script>
-import { Input, Button, Heading, Div } from '../atoms';
+import {
+ Input, Button, Heading, Div,
+} from '../atoms';
 
 export default {
     name: 'SignupSection',
