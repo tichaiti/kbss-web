@@ -9,10 +9,7 @@
 export default {
     name: 'DivSection',
     props: {
-        className: {
-            type: String,
-            default: '',
-        },
+        className: String,
     },
 };
 </script>

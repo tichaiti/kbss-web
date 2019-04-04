@@ -10,6 +10,7 @@ import Summary from './Summary.vue';
 import Form from './Form.vue';
 import Heading from './Heading.vue';
 import Input from './Input.vue';
+import Label from './Label.vue';
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   Form,
   Heading,
   Input,
+  Label,
 };

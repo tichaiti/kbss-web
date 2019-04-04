@@ -1,7 +1,9 @@
-import LoginSection from './LoginSection.vue';
-import SignupSection from './SignupSection.vue';
+import Field from './forms/Field.vue';
+import Search from './forms/Search.vue';
+import TextArea from './forms/TextArea.vue';
 
 export {
-  LoginSection,
-  SignupSection,
+  Field,
+  Search,
+  TextArea,
 };

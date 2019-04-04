@@ -1,18 +1,17 @@
 <template>
-    <div>
-        <LoginSection />
+    <div class='login'>
+        <LoginTemplate />
     </div>
 </template>
 
 
 <script>
-
-import { LoginSection } from '@/components/molecules';
+import LoginTemplate from '../components/templates/LoginTemplate.vue';
 
 export default {
   name: 'LoginComponent',
   components: {
-    LoginSection,
+    LoginTemplate,
   },
 };
 
@@ -20,5 +19,14 @@ export default {
 
 
 <style>
+  .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    margin: 0 auto;
+    width: 700px;
+  }
 
 </style>
