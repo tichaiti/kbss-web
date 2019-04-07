@@ -3,7 +3,7 @@
         v-bind="$props"
         @click="click"
         :class="className">
-        <slot>{{name}}</slot>
+        <slot></slot>
     </button>
 </template>
 

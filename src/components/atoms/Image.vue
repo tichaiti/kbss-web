@@ -1,5 +1,5 @@
 <template>
-    <img :src='src' :alt='alt' :class='className'>
+    <img v-bind="$props" />
 </template>
 
 
@@ -8,8 +8,6 @@ export default {
     name: 'Image',
     props: {
         className: String,
-        alt: String,
-        src: String,
     },
 };
 </script>

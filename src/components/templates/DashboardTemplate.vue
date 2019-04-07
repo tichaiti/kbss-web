@@ -1,6 +1,7 @@
 <template>
     <div>
-        <DashboardTemplate />
+        <HeaderSection />
+        <SidebarSection />
     </div>
 </template>
 
@@ -8,7 +9,8 @@
 <script>
 
 import { mapState } from 'vuex';
-import DashboardTemplate from '../components/templates/DashboardTemplate.vue';
+import HeaderSection from '../organisms/HeaderSection.vue';
+import SidebarSection from '../organisms/SidebarSection.vue';
 
 export default {
     name: 'Dashboard',
@@ -18,7 +20,8 @@ export default {
         ]),
     },
     components: {
-        DashboardTemplate,
+        HeaderSection,
+        SidebarSection,
     },
 };
 </script>
