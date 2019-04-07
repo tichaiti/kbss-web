@@ -1,5 +1,8 @@
 <template>
-    <button :class="className">
+    <button
+        v-bind="$props"
+        @click="click"
+        :class="className">
         <slot>{{name}}</slot>
     </button>
 </template>
@@ -14,6 +17,7 @@ export default {
             type: String,
             default: 'button',
         },
+        click: Function,
     },
 };
 </script>

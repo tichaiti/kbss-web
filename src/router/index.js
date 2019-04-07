@@ -6,8 +6,8 @@ import {
   Login,
   Signup,
   Profile,
+  Dashboard,
 } from '../views';
-
 
 Vue.use(Router);
 
@@ -18,6 +18,11 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard,
     },
     {
       path: '/login',

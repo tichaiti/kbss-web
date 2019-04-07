@@ -1,9 +1,9 @@
 <template>
    <input
         :type='type'
-        :placeholder='placeholder'
-        :class="className"
         class='input'
+        v-on:input="(event) => this.$emit('inputChange', event)"
+        v-bind="$props"
     >
 </template>
 
@@ -16,8 +16,6 @@ export default {
             type: String,
             default: 'text',
         },
-        placeholder: String,
-        className: String,
     },
 };
 </script>

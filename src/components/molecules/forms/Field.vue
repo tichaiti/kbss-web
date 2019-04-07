@@ -1,10 +1,12 @@
 <template>
     <Div className='field'>
-        <Label :id="id"> {{name}} </Label>
+        <Label :id="id"> {{name | capitalize}} </Label>
         <Input
             :placeholder='placeholder'
             :type='type'
-            className='large'
+            :name='name'
+            class='large'
+            v-on:inputChange="onChange"
         />
     </Div>
 </template>
@@ -21,6 +23,7 @@ export default {
         id: String,
         type: String,
         placeholder: String,
+        onChange: Function,
     },
     components: {
         Label,

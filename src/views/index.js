@@ -3,6 +3,7 @@ import About from './About.vue';
 import Login from './Login.vue';
 import Profile from './Profile.vue';
 import Signup from './Signup.vue';
+import Dashboard from './Dashboard.vue';
 
 export {
   Home,
@@ -10,4 +11,5 @@ export {
   Login,
   Profile,
   Signup,
+  Dashboard,
 };

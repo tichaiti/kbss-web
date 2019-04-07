@@ -11,8 +11,12 @@ const store = new Vuex.Store({
   },
   mutations: {
     increment(state) {
-      // eslint-disable-next-line no-param-reassign
       state.count += 1;
+    },
+
+    // Temporary
+    processAuthentication(state, user) {
+      state.user = user;
     },
   },
   actions: {
