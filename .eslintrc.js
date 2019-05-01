@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: {
     node: true,
+    jest: true,
   },
   extends: [
     'plugin:vue/essential',
@@ -16,8 +17,8 @@ module.exports = {
       props: true,
       ignorePropertyModificationsFor: [
         'state',
-      ]
-    }]
+      ],
+    }],
   },
   parserOptions: {
     parser: 'babel-eslint',

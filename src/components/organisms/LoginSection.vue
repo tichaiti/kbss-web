@@ -9,7 +9,7 @@
             type="password"
             placeholder='Password'
             name='password'/>
-        <Button :click="handleClick"> Submit </Button>
+        <Button class="red" :click="handleClick"> Submit </Button>
 
         <p>Username: {{username}}</p>
     </Form>

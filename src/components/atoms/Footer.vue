@@ -1,18 +1,12 @@
 <template>
-    <div :class='className'>
+    <footer v-bind="$props">
         <slot></slot>
-    </div>
+    </footer>
 </template>
 
 
 <script>
 export default {
     name: 'Footer',
-    props: {
-        className: {
-            type: String,
-            default: '',
-        },
-    },
 };
 </script>

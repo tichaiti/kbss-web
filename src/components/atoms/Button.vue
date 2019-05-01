@@ -1,8 +1,6 @@
 <template>
     <button
-        v-bind="$props"
-        @click="click"
-        :class="className">
+        v-bind="$props">
         <slot></slot>
     </button>
 </template>
@@ -11,14 +9,6 @@
 <script>
 export default {
     name: 'Button',
-    props: {
-        name: String,
-        className: {
-            type: String,
-            default: 'button',
-        },
-        click: Function,
-    },
 };
 </script>
 
@@ -36,4 +26,13 @@ export default {
         user-select: none;
         outline: none;
     }
+
+    .red {
+        background-color: red;
+    }
+
+    .green {
+        background-color: green;
+    }
+
 </style>
