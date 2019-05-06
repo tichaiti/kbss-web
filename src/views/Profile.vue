@@ -1,13 +1,18 @@
 <template>
     <div>
-        <h2>I am the Template Component</h2>
+        <Profile />
     </div>
 </template>
 
 
 <script>
+import Profile from '../components/templates/Profile.vue';
+
 export default {
   name: 'ProfileComponent',
+  components: {
+    Profile,
+  },
 };
 </script>
 

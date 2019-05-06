@@ -1,59 +1,35 @@
 <template>
-    <Div class="sidebar">
-        <Accordion title="Admin">
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-        </Accordion>
+  <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <el-menu :default-openeds="['1', '2', '3']">
+      <NavigatorSubmenu/>
 
-        <Accordion title="Profile">
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-            <IconText iconName="toolbox">
-                I am happy to be here
-            </IconText>
-        </Accordion>
-    </Div>
+      <AdminSubmenu/>
+
+      <SettingSubmenu/>
+    </el-menu>
+  </el-aside>
 </template>
 
 
 <script>
-import { Accordion, IconText } from '../molecules';
-import { Div } from '../atoms';
-
+import NavigatorSubmenu from '../molecules/submenus/NavigatorSubmenu.vue';
+import AdminSubmenu from '../molecules/submenus/AdminSubmenu.vue';
+import SettingSubmenu from '../molecules/submenus/SettingSubmenu.vue';
 
 export default {
-    name: 'LoginSection',
+  name: 'LoginSection',
 
-    components: {
-        Accordion,
-        Div,
-        IconText,
-    },
-    props: String,
+  components: {
+    NavigatorSubmenu,
+    AdminSubmenu,
+    SettingSubmenu,
+  },
+  props: String,
 };
-
 </script>
 
 <style>
-    .sidebar {
-        width: 276px;
-    }
-
+.sidebar {
+  width: 276px;
+}
 </style>

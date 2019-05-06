@@ -1,69 +1,66 @@
 <template>
-    <Form className='login-section'>
-        <Field
-            :onChange="handleChange"
-            placeholder='Username...'
-            name='username'/>
-        <Field
-            :onChange="handleChange"
-            type="password"
-            placeholder='Password'
-            name='password'/>
-        <Button class="red" :click="handleClick"> Submit </Button>
+  <el-form v-model="form" label-width="120px">
+    <p class="error" v-if="isError">{{errorMessage}}</p>
+    <el-form-item label="Email">
+      <el-input @focus="handleChange" placeholder="Please input your email" v-model="form.email" prop="checkPass"></el-input>
+    </el-form-item>
 
-        <p>Username: {{username}}</p>
-    </Form>
+    <el-form-item label="Password" prop="checkPass">
+      <el-input @focus="handleChange" placeholder="Please input your password" v-model="form.password" show-password></el-input>
+    </el-form-item>
 
+    <el-button @click="onSubmit">Sign in</el-button>
+  </el-form>
 </template>
 
 
 <script>
-import { Field } from '../molecules';
-import { Form, Button } from '../atoms';
-
+import { mapGetters } from 'vuex';
 
 export default {
-    name: 'LoginSection',
-    data() {
-        return {
-            username: '',
-            password: '',
-        };
+  name: 'LoginSection',
+  data() {
+    return {
+      form: {
+        password: '',
+        email: '',
+      },
+    };
+  },
+  computed: {
+    ...mapGetters({
+      isError: 'isError',
+      errorMessage: 'errorMessage',
+    }),
+  },
+  components: {},
+  methods: {
+    onSubmit(event) {
+      event.preventDefault();
+      const user = {
+        email: this.form.email,
+        password: this.form.password,
+      };
+      this.$store.dispatch('login', user);
     },
-
-    components: {
-        Field,
-        Form,
-        Button,
+    handleChange() {
+        if (this.isError) {
+            this.$store.commit('removeError');
+        }
     },
-    methods: {
-        handleChange(event) {
-            const { name } = event.target;
-            this[name] = event.target.value;
-        },
-
-        handleClick(event) {
-            event.preventDefault();
-            const user = {
-                username: this.username,
-                password: this.password,
-            };
-            // TODO: implement authentication
-            this.$store.commit('processAuthentication', user);
-            this.$router.push('/dashboard'); // TODO: implement authentication
-            console.log('State: ', this.$store.state);
-        },
-    },
-    props: String,
+  },
 };
-
 </script>
 
 <style>
-    .login-section {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-    }
+.login-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+}
 </style>
