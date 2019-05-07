@@ -1,11 +1,18 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import createLogger from 'vuex/dist/logger';
 import router from './router';
+
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
+  plugins: [
+    createLogger({
+      collapsed: false,
+    }),
+  ],
   state: {
     user: {},
     isAuthenticated: false,
