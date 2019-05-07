@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>I am the Home Component</h2>
+    <el-button @click="goToSignup">Signup</el-button>
+    <el-button @click="goToLogin">Login</el-button>
   </div>
 </template>
 
@@ -8,6 +9,15 @@
 <script>
 export default {
   name: 'Home',
+  methods: {
+    goToSignup() {
+      this.$router.push('/login');
+    },
+
+    goToLogin() {
+      this.$router.push('/login');
+    },
+  },
 
 };
 </script>
